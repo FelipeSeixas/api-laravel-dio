@@ -1,0 +1,16 @@
+Entrar na pasta raiz do projeto e digitar: php artisan serve
+
+Conforme exemplo abaixo:
+
+C:\xampp\htdocs\example-app> php artisan serve
+
+   INFO  Server running on [http://127.0.0.1:8000].  
+
+  Press Ctrl+C to stop the server
+
+
+  Criar os controllers?:
+  php artisan make:controller NovoController
+
+  //Criação de models:
+  php artisan make:models Nomedesejado

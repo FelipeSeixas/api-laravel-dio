@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema 
+xmlns="http://www.esocial.gov.br/schema/evt/evtRemun/v_S_01_02_00" 
+targetNamespace="http://www.esocial.gov.br/schema/evt/evtRemun/v_S_01_02_00" 
+xmlns:ds="http://www.w3.org/2000/09/xmldsig#" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+elementFormDefault="qualified" 
+attributeFormDefault="unqualified">
+    <xs:include schemaLocation="tipos.xsd" />
+    <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema.xsd" />
+    <xs:element name="eSocial">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="evtRemun">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ideEvento" type="T_ideEvento_folha" />
+                            <xs:element name="ideEmpregador" type="T_ideEmpregador" />
+                            <xs:element name="ideTrabalhador">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="cpfTrab" type="TS_cpfRemun" />
+                                        <xs:element name="infoMV" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="indMV" type="TS_indMV" />
+                                                    <xs:element name="remunOutrEmpr" minOccurs="1" maxOccurs="999">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="tpInsc" type="TS_tpInsc_1_2" />
+                                                                <xs:element name="nrInsc" type="TS_nrInsc_11_14">
+                                                                </xs:element>
+                                                                <xs:element name="codCateg" type="TS_codCategOE" />
+                                                                <xs:element name="vlrRemunOE" type="TS_vlrRemunOE" />
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="infoComplem" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="nmTrab" type="TS_nmTrab" />
+                                                    <xs:element name="dtNascto" type="TS_dtNascto" />
+                                                    <xs:element name="sucessaoVinc" minOccurs="0">
+                                                       <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="tpInsc" type="TS_tpInsc_1_2" />
+                                                                <xs:element name="nrInsc" type="TS_nrInsc_11_14">
+                                                                </xs:element>
+                                                                <xs:element name="matricAnt" minOccurs="0" type="TS_matricAnt" />
+                                                                <xs:element name="dtAdm" type="TS_dtAdm" />
+                                                                <xs:element name="observacao" minOccurs="0" type="TS_observacao" />
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="procJudTrab" minOccurs="0" maxOccurs="99" type="T_procJudTrab" />
+                                        <xs:element name="infoInterm" minOccurs="0" maxOccurs="31" type="T_infoInterm">
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="dmDev" maxOccurs="999">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ideDmDev" type="TS_codigo_esocial">
+                                        </xs:element>
+                                        <xs:element name="codCateg" type="TS_codCateg" />
+                                        <xs:element name="indRRA" minOccurs="0" type="TS_indRRA" />
+                                        <xs:element name="infoRRA" minOccurs="0" type="T_infoRRA" />
+                                        <xs:element name="infoPerApur" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ideEstabLot" maxOccurs="500">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="tpInsc" type="TS_tpInsc_EstabLot" />
+                                                                <xs:element name="nrInsc" type="TS_nrInsc_EstabLot" />
+                                                                <xs:element name="codLotacao" type="TS_codLotacao" />
+                                                                <xs:element name="qtdDiasAv" minOccurs="0" type="TS_dia">
+                                                                </xs:element>
+                                                                <xs:element name="remunPerApur" maxOccurs="8">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="matricula" minOccurs="0" type="TS_codigo_esocial">
+                                                                            </xs:element>
+                                                                            <xs:element name="indSimples" minOccurs="0" type="TS_indSimples" />
+                                                                            <xs:element name="itensRemun" type="T_itensRemun" maxOccurs="200" />
+                                                                            <xs:element name="infoAgNocivo" minOccurs="0" type="T_infoAgNocivo">
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="infoPerAnt" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ideADC" maxOccurs="8">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="dtAcConv" minOccurs="0">
+                                                                    <xs:simpleType>
+                                                                        <xs:restriction base="xs:date">
+                                                                            <xs:minInclusive value="1890-01-01" />
+                                                                        </xs:restriction>
+                                                                    </xs:simpleType>
+                                                                </xs:element>
+                                                                <xs:element name="tpAcConv" type="TS_tpAcConv">
+                                                                </xs:element>
+                                                                <xs:element name="dsc" type="TS_dsc" />
+                                                                <xs:element name="remunSuc" type="TS_sim_nao">
+                                                                </xs:element>
+                                                                <xs:element name="idePeriodo" maxOccurs="180">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="perRef" type="TS_periodo_mensal">
+                                                                            </xs:element>
+                                                                            <xs:element name="ideEstabLot" maxOccurs="500">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="tpInsc" type="TS_tpInsc_EstabLot" />
+                                                                                        <xs:element name="nrInsc" type="TS_nrInsc_EstabLot" />
+                                                                                        <xs:element name="codLotacao" type="TS_codLotacao" />
+                                                                                        <xs:element name="remunPerAnt" maxOccurs="8">
+                                                                                            <xs:complexType>
+                                                                                                <xs:sequence>
+                                                                                                    <xs:element name="matricula" minOccurs="0" type="TS_codigo_esocial">
+                                                                                                    </xs:element>
+                                                                                                    <xs:element name="indSimples" minOccurs="0" type="TS_indSimples" />
+                                                                                                    <xs:element name="itensRemun" type="T_itensRemun" maxOccurs="200" />
+                                                                                                    <xs:element name="infoAgNocivo" minOccurs="0" type="T_infoAgNocivo">
+                                                                                                    </xs:element>
+                                                                                                </xs:sequence>
+                                                                                            </xs:complexType>
+                                                                                        </xs:element>
+                                                                                    </xs:sequence>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="infoComplCont" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="codCBO" type="TS_cbo">
+                                                    </xs:element>
+                                                    <xs:element name="natAtividade" minOccurs="0" type="TS_natAtividade">
+                                                    </xs:element>
+                                                    <xs:element name="qtdDiasTrab" minOccurs="0" type="TS_dia">
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="Id" use="required" type="TS_Id" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element ref="ds:Signature" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="T_itensRemun">
+        <xs:sequence>
+            <xs:element name="codRubr" type="TS_codigo_esocial">
+            </xs:element>
+            <xs:element name="ideTabRubr" type="TS_ideTabRubr" />
+            <xs:element name="qtdRubr" minOccurs="0" type="TS_qtdRubr" />
+            <xs:element name="fatorRubr" minOccurs="0" type="TS_fator" />
+            <xs:element name="vrRubr" type="TS_vrRubr" />
+            <xs:element name="indApurIR" type="TS_indApurIR" minOccurs="0">
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="T_infoAgNocivo">
+        <xs:sequence>
+            <xs:element name="grauExp" type="TS_grauExp" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
