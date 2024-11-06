@@ -1,3 +1,11 @@
+# api-laravel-dio
+API PHP Laravel: routes, get, post e Controllers.
+Ações necessárias que utilizei para criar essas API´s:
+- Instalar o Laravel (exemplo de comando para utilizar apenas no projeto): laravel new nome_do_projeto 
+- Consultar se o Artinsan foi instalado com sucesso, após instalar o Laraavel (digite na linha de comando): php artisan --version
+- Executar o servidor, a sua escolha, mas utilizei a local (digite na linha de comando): php artisan serve.
+  Qualquer dúvida, manda um alô no linkedin do perfil que respondo =D.
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
